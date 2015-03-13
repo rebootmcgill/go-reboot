@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"time"
+	"io"
 )
 
 const PENDING_URL = "/api/pending/"
@@ -31,7 +32,7 @@ type Request struct {
 }
 
 func (r *Request) Fetch() *Request {
-	page, err := http.Get(r.url+JSON_FORMAT)
+	page, err := http.Get(r.Url+JSON_FORMAT)
 	if err != nil {
 		log.Fatal(err)
 	}
