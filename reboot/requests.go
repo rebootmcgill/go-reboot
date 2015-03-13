@@ -39,7 +39,7 @@ func (r *Request) Fetch() *Request {
 	defer page.Body.Close()
 	dec := json.NewDecoder(page.Body)
 	if err = dec.Decode(r); err == io.EOF {
-		break
+		log.Fatal(err)
 	} else if err != nil {
 		log.Fatal(err)
 	}
