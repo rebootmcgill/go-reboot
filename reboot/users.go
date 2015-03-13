@@ -5,8 +5,8 @@ import (
 	_ "net/http"
 )
 
-type user struct {
-	url      string
-	username string
-	is_staff bool
+type User struct {
+	Url      string
+	Username string
+	Is_staff bool
 }
