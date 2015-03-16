@@ -17,8 +17,8 @@ type Request struct {
 	Requester_type    rune
 	Faculty_and_dept  string
 	Organization      string
-	Preset            Preset
-	Os                OS
+	Preset            *Preset
+	Os                *OS
 	Machine_use       string
 	Need_display      bool
 	Need_keyboard     bool
@@ -27,8 +27,8 @@ type Request struct {
 	Extra_information string
 	Amount            int
 	Filled            bool
-	Filled_at         time.Time
-	Requested_at      time.Time
+	Filled_at         *time.Time
+	Requested_at      *time.Time
 }
 
 func (r *Request) Fetch() *Request {
@@ -41,6 +41,7 @@ func (r *Request) Fetch() *Request {
 	if err = dec.Decode(r); err == io.EOF {
 		log.Fatal(err)
 	} else if err != nil {
+		log.Println("Error fetching Request at ", r.Url)
 		log.Fatal(err)
 	}
 	return r
