@@ -20,7 +20,7 @@ type Request struct {
 	Preset            string
 	presetObject	*Preset
 	Os                string
-	osObject	*Os
+	osObject	*OS
 	Machine_use       string
 	Need_display      bool
 	Need_keyboard     bool
