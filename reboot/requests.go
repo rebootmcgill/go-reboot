@@ -14,7 +14,7 @@ type Request struct {
 	Url               string
 	Family_name       string
 	Given_name        string
-	Requester_type    rune
+	Requester_type    string
 	Faculty_and_dept  string
 	Organization      string
 	Preset            string
@@ -27,7 +27,7 @@ type Request struct {
 	Need_mouse        bool
 	Need_ethernet     bool
 	Extra_information string
-	Amount            int
+//	Amount            int
 	Filled            bool
 	Filled_at         *time.Time
 	Requested_at      *time.Time
