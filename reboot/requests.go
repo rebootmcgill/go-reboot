@@ -17,8 +17,10 @@ type Request struct {
 	Requester_type    rune
 	Faculty_and_dept  string
 	Organization      string
-	Preset            *Preset
-	Os                *OS
+	Preset            string
+	presetObject	*Preset
+	Os                string
+	osObject	*Os
 	Machine_use       string
 	Need_display      bool
 	Need_keyboard     bool
