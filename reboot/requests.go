@@ -27,7 +27,7 @@ type Request struct {
 	Need_mouse        bool
 	Need_ethernet     bool
 	Extra_information string
-//	Amount            int
+	Amount            int
 	Filled            bool
 	Filled_at         *time.Time
 	Requested_at      *time.Time
