@@ -17,7 +17,7 @@ type Request struct {
 	Requester_type    string
 	Faculty_and_dept  string
 	Organization      string
-	Preset            string
+	Preset            *Preset
 	presetObject	*Preset
 	Os                string
 	osObject	*OS
