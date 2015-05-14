@@ -6,8 +6,8 @@ import (
 )
 
 type OS struct {
-	url          string
-	name         string
-	version      string
-	experimental bool
+	Url          string
+	Name         string
+	Version      string
+	Experimental bool
 }

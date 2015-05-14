@@ -2,10 +2,10 @@ package reboot
 
 import (
 	"encoding/json"
+	"io"
 	"log"
 	"net/http"
 	"time"
-	"io"
 )
 
 const PENDING_URL = "/api/pending/"
@@ -17,10 +17,10 @@ type Request struct {
 	Requester_type    string
 	Faculty_and_dept  string
 	Organization      string
-	Preset            *Preset
-	presetObject	*Preset
+	Preset            string
+	presetObject      *Preset
 	Os                string
-	osObject	*OS
+	osObject          *OS
 	Machine_use       string
 	Need_display      bool
 	Need_keyboard     bool
@@ -34,7 +34,7 @@ type Request struct {
 }
 
 func (r *Request) Fetch() *Request {
-	page, err := http.Get(r.Url+JSON_FORMAT)
+	page, err := http.Get(r.Url + JSON_FORMAT)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -46,5 +46,9 @@ func (r *Request) Fetch() *Request {
 		log.Println("Error fetching Request at ", r.Url)
 		log.Fatal(err)
 	}
+	r.presetObject = new(Preset)
+	r.presetObject.Url = r.Preset
+	r.osObject = new(OS)
+	r.osObject.Url = r.Os
 	return r
 }

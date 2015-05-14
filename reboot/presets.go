@@ -6,8 +6,8 @@ import (
 )
 
 type Preset struct {
-	url string
+	Url string
 	cpu CPU
-	ram int
-	hdd int
+	Ram int
+	Hdd int
 }
